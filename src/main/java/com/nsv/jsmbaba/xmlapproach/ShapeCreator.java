@@ -1,4 +1,4 @@
-package com.nsv.jsmbaba.loosecouping;
+package com.nsv.jsmbaba.xmlapproach;
 
 import lombok.Getter;
 

@@ -1,7 +1,7 @@
 package com.nsv.jsmbaba.beanfactory;
 
-import com.nsv.jsmbaba.loosecouping.Shape;
-import com.nsv.jsmbaba.loosecouping.ShapeCreator;
+import com.nsv.jsmbaba.xmlapproach.Shape;
+import com.nsv.jsmbaba.xmlapproach.ShapeCreator;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;

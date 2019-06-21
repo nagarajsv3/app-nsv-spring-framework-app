@@ -1,4 +1,4 @@
-package com.nsv.jsmbaba.loosecouping;
+package com.nsv.jsmbaba.xmlplusannotations;
 
 public interface Shape {
     void drawShape();

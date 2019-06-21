@@ -6,17 +6,17 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean class="com.nsv.jsmbaba.loosecouping.Circle" id="circle" />
-    <bean class="com.nsv.jsmbaba.loosecouping.Rectangle" id="rectangle" />
-    <bean class="com.nsv.jsmbaba.loosecouping.Triangle" id="triangle" />
+    <bean class="com.nsv.jsmbaba.xmlapproach.Circle" id="circle" />
+    <bean class="com.nsv.jsmbaba.xmlapproach.Rectangle" id="rectangle" />
+    <bean class="com.nsv.jsmbaba.xmlapproach.Triangle" id="triangle"/>
 
     <!--setter based dependency injection-->
-<!--    <bean class="com.nsv.jsmbaba.loosecouping.ShapeCreator" id="shapeCreator">
+<!--    <bean class="com.nsv.jsmbaba.xmlapproachShapeCreator" id="shapeCreator">
         <property name="shape" ref="circle"/>
     </bean>-->
 
     <!--constructor based dependency injection-->
-    <bean class="com.nsv.jsmbaba.loosecouping.ShapeCreator" id="shapeCreator">
+    <bean class="com.nsv.jsmbaba.xmlapproach.ShapeCreator" id="shapeCreator">
         <constructor-arg name="shape" ref="circle" />
     </bean>
 
