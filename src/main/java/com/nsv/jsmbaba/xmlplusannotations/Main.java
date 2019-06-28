@@ -10,6 +10,10 @@ public class Main {
         ShapeCreator shapeCreator = applicationContext.getBean(ShapeCreator.class);
         Shape shape = shapeCreator.getShape();
         shape.drawShape();
+
+        ShapeCreator1 shapeCreator1 = applicationContext.getBean(ShapeCreator1.class);
+        Shape shape1 = shapeCreator1.getShape();
+        shape1.drawShape();
         ((ClassPathXmlApplicationContext)applicationContext).close();
     }
 }
