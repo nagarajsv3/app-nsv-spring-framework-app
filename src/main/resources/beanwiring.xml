@@ -8,6 +8,16 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean class="com.nsv.jsmbaba.beanwiring.Circle" id="circle"/>
-    <bean class="com.nsv.jsmbaba.beanwiring.ShapeCreator" id="shapeCreator" autowire="byName"/>
+
+    <!--Autowiring types-->
+    <!--byName - bySetterName-->
+    <!--    <bean class="com.nsv.jsmbaba.beanwiring.ShapeCreator" id="shapeCreator" autowire="byName"/>-->
+
+    <!--byType - byDataType-->
+    <!--        <bean class="com.nsv.jsmbaba.beanwiring.ShapeCreator" id="shapeCreator" autowire="byType"/>-->
+
+    <!--<bean class="com.nsv.jsmbaba.beanwiring.ShapeCreator" id="shapeCreator" autowire="constructor"/>-->
+
+    <bean class="com.nsv.jsmbaba.beanwiring.ShapeCreator" id="shapeCreator" autowire="byType"/>
 
 </beans>

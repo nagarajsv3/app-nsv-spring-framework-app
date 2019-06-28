@@ -15,6 +15,6 @@ public class ShapeCreator {
     }
     public ShapeCreator(Circle circle) {
         System.out.println("Bean Wiring is using constructor");
-        this.circle = circle;
+        this.circle= circle;
     }
 }
