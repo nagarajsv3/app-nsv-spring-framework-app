@@ -51,3 +51,43 @@ Bean Configuration Types
     <context:annotation-config />
     <context:component-scan basepackages="" />
         
+Reading property files using PropertyPlaceholderConfigurer
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <!--Reading from a single property file-->
+        <!--<property name="location" value="classpath:application.properties"/>-->
+
+        <!--reading from multple property files-->
+        <property name="locations">
+            <list>
+                <value>classpath:application.properties</value>
+                <value>classpath:connection.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean class="com.nsv.jsmbaba.readingpropertyfile.Author" id="author">
+        <property name="title" value="${title}" />
+        <property name="connectionUrl" value="${connection.url}" />
+    </bean>
+    
+
+Defining Constants
+    <!--constants-->
+    <util:constant static-field="com.nsv.jsmbaba.constantsdatastructures.Company.COMPANY_NAME" id="companyName" />
+
+Defining DataStructures
+    <!--datastructures-->
+    <util:list id="availableLocations">
+        <value>NJ</value>
+        <value>TX</value>
+    </util:list>
+
+    <util:map id="availableLocationsMap">
+        <entry key="NJ" value="New Jersey"/>
+        <entry key="TX" value="Texas"/>
+    </util:map>
+
+    <alias name="employee" alias="emp"/>
+
+        
+        
