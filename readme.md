@@ -25,3 +25,29 @@ Create all the required bean
     <bean class="com.nsv.jsmbaba.xmlapproach.ShapeCreator" id="shapeCreator">
         <constructor-arg name="shape" ref="circle" />
     </bean>
+  
+Bean Scopes
+1. Singleton - Default
+2. Prototype
+3. Request
+4. Session
+5. GlobalSession
+    
+Autowiring
+@Autowired -> Dependency Injection without using Setter/Constructor based D.I
+
+@Autowired Types
+byName
+byType
+constructor
+no
+
+@Qualifier() -> To provide a specific bean during dependency injection if there multiple conflicting beans of the same datatype are present
+
+
+Bean Configuration Types
+1. Only XML
+2. XML + Annotation
+    <context:annotation-config />
+    <context:component-scan basepackages="" />
+        

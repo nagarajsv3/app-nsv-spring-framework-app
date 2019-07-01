@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
 
     <context:annotation-config/>
     <context:component-scan base-package="com.nsv.jsmbaba.xmlplusannotations"/>
 
+    <!--constants-->
+    <util:constant static-field="com.nsv.jsmbaba.constantsdatastructures.Company.COMPANY_NAME" id="companyName" />
+
+    <!--datastructures-->
+    <util:list id="availableLocations">
+        <value>NJ</value>
+        <value>TX</value>
+    </util:list>
+
+    <util:map id="availableLocationsMap">
+        <entry key="NJ" value="New Jersey"/>
+        <entry key="TX" value="Texas"/>
+    </util:map>
+
     <bean class="com.nsv.jsmbaba.xmlplusannotations.ShapeCreator1" id="shapeCreator1"/>
+    <bean class="com.nsv.jsmbaba.constantsdatastructures.Employee" id="employee" scope="prototype">
+        <property name="companyName" ref="companyName"/>
+        <property name="availableLocations" ref="availableLocations"/>
+        <property name="availableLocationsMap" ref="availableLocationsMap"/>
+        <property name="preferredLocationsMap">
+            <map>
+                <entry key="DE" value="Delaware"/>
+                <entry key="PA" value="Pencylvania"/>
+            </map>
+        </property>
+    </bean>
+    <alias name="employee" alias="emp"/>
 
 </beans>
