@@ -107,3 +107,12 @@ Bean Inheritance
 
 Abstract Class
 <bean class="com.nsv.jsmbaba.inheritance.Contractor" id="Person" abstract="true" />
+
+Lookup Method DI : When we try to inject a prototype bean inside singleton bean , prototype bean acts as a singleton bean. So we need to use LookUpMethod DI to inject a prototype bean inside singleton bean.
+
+Spring Bean Lifecycle :
+BeanNameAware Interface
+BeanFactoryAware Interface
+BeanPostProcessor Interface
+InitializingBean Interface
+DisposableBean Interface
