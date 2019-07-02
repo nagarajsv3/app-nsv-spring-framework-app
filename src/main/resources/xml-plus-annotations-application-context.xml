@@ -14,6 +14,11 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.nsv.jsmbaba.xmlplusannotations"/>
 
+    <!--import resource-->
+    <import resource="application-context.xml" />
+    <import resource="beanwiring.xml" />
+
+
     <!--reading property files using PropertyPlaceholderConfigurer-->
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <!--Reading from a single property file-->
@@ -27,6 +32,9 @@
             </list>
         </property>
     </bean>
+
+
+    <context:property-placeholder location="classpath:application.properties"/>
 
 
     <!--constants-->
@@ -57,7 +65,7 @@
     </bean>
     <alias name="employee" alias="emp"/>
 
-    <bean class="com.nsv.jsmbaba.readingpropertyfile.Author" id="author">
+    <bean class="com.nsv.jsmbaba.readingpropertyfile.Author" id="author" lazy-init="true">
         <property name="title" value="${title}" />
         <property name="connectionUrl" value="${connection.url}" />
     </bean>

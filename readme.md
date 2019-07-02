@@ -51,7 +51,12 @@ Bean Configuration Types
     <context:annotation-config />
     <context:component-scan basepackages="" />
         
-Reading property files using PropertyPlaceholderConfigurer
+Reading property file/s using PropertyPlaceholderConfigurer
+1. We can use context:property-placeholder OR Spring Bean PropertyPlaceholderConfigurer to read a single property file
+2. context:property-placeholder does not support reading multiple files.
+3. Spring Bean PropertyPlaceholderConfigurer supports reading multiple files.
+4. Use Spring Bean PropertyPlaceholderConfigurer to read property file/s.
+
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <!--Reading from a single property file-->
         <!--<property name="location" value="classpath:application.properties"/>-->
@@ -70,7 +75,6 @@ Reading property files using PropertyPlaceholderConfigurer
         <property name="connectionUrl" value="${connection.url}" />
     </bean>
     
-
 Defining Constants
     <!--constants-->
     <util:constant static-field="com.nsv.jsmbaba.constantsdatastructures.Company.COMPANY_NAME" id="companyName" />
@@ -90,4 +94,16 @@ Defining DataStructures
     <alias name="employee" alias="emp"/>
 
         
-        
+Importing Resources
+    <!--import resource-->
+    <import resource="application-context.xml" />
+    <import resource="beanwiring.xml" />
+    
+Spring Bean Lazy Initialization : lazy-init="true"
+    <bean class="com.nsv.jsmbaba.readingpropertyfile.Author" id="author" lazy-init="true" />
+    
+Bean Inheritance
+<bean class="com.nsv.jsmbaba.inheritance.Contractor" id="contractor" parent="person" />
+
+Abstract Class
+<bean class="com.nsv.jsmbaba.inheritance.Contractor" id="Person" abstract="true" />
