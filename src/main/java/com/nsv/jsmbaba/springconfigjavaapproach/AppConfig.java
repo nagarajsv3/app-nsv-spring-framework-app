@@ -19,6 +19,8 @@ public class AppConfig {
 
     @Bean(name="circle")
     @Scope(value = "singleton")
+    //@Scope("singleton")
+    //@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public Circle getCircle(){return new Circle();}
 
     @Bean
