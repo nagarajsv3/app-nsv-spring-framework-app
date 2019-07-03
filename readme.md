@@ -116,3 +116,24 @@ BeanFactoryAware Interface
 BeanPostProcessor Interface
 InitializingBean Interface
 DisposableBean Interface
+
+Complete Java Configuration:
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        
+@Configuration
+@ComponentScans(value={
+        @ComponentScan(basePackages = {
+                "com.nsv.jsmbaba.springconfigjavaapproach"
+        })
+})
+@PropertySources(value={@PropertySource(value="classpath:application.properties"),
+                        @PropertySource(value="classpath:connection.properties")})
+public class AppConfig {
+
+    @Autowired
+    private Environment env;
+
+    @Bean(name="circle")
+    @Scope(value = "singleton")
+    public Circle getCircle(){return new Circle();}
+
