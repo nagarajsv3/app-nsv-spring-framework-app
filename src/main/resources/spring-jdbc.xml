@@ -8,16 +8,31 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
+    <context:annotation-config></context:annotation-config>
+    <context:component-scan base-package="com.nsv.jsmbaba.springjdbc" />
+    <!--reading property files using PropertyPlaceholderConfigurer-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <!--Reading from a single property file-->
+        <!--<property name="location" value="classpath:application.properties"/>-->
+
+        <!--reading from multple property files-->
+        <property name="locations">
+            <list>
+                <value>classpath:connection.properties</value>
+            </list>
+        </property>
+    </bean>
+
     <!--spring jdbc needs datasource & jdbctemplate-->
     <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
-        <property name="driverClassName" value=""/>
-        <property name="url" value="root"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root" />
+        <property name="driverClassName" value="${connection.drivername}"/>
+        <property name="url" value="${connection.url}"/>
+        <property name="username" value="${connection.username}"/>
+        <property name="password" value="${connection.password}" />
     </bean>
 
 </beans>
