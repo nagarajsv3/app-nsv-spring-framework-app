@@ -137,3 +137,6 @@ public class AppConfig {
     @Scope(value = "singleton")
     public Circle getCircle(){return new Circle();}
 
+
+Spring JDBC
+1. spring jdbc needs datasource & jdbctemplate beans
