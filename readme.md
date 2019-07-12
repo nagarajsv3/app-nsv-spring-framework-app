@@ -140,3 +140,12 @@ public class AppConfig {
 
 Spring JDBC
 1. spring jdbc needs datasource & jdbctemplate beans
+
+Spring Bean Profiles
+1. XML Config
+    <beans profile="prod">
+        <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+2. Java Config
+    @Profile(value={"dev","qa"})        
+3. JVM Arg/System Property
+spring.profiles.active=dev
